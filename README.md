@@ -2,7 +2,6 @@
 Fundamentos
 
 Puro, único plugin será o React Router Dom
-
 Componentes Funcionais, Hooks, Ciclo de Vida, Formulários, Propriedades, Router e Mais
 
 [Slides do curso](https://www.origamid.com/slide/react-completo/#/0101-o-curso/1)
@@ -36,7 +35,6 @@ Projeto do curso: https://www.dogs.origamid.dev/
     * Live Server, Color Highlight, Prettier, ES7 React/Redux/ GraphQL snippets
 * React Developer Tools
 
-
 ## Revisão de Javascript
 
 * Tudo é objeto
@@ -53,12 +51,9 @@ const menu = {
 }
 
 menu.selector; // ".principal";
-menu.active(); // adcionar active ao menu
+menu.active(); // adicionar active ao menu
 menu.hasOwnProperty('class'); // método herdado
 ```
-
-```javascript
-
 * Arrow Function
 * Destructuring
 * Rest e Spread
@@ -67,3 +62,11 @@ menu.hasOwnProperty('class'); // método herdado
 * Async / Await
 * Array (map e filter)
 * Expressões
+
+## React para Iniciantes
+
+Explicar os conceitos básicos *
+
+Hooks
+
+* React Básico, Vite, JSX, Eventos, Components, Propriedades

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React e Javascript</title>
+
+  <!-- Carrega o React, React Dom e Babel -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+  <!-- Don't use this in production: -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+  <div id="app-javascript">
+    <p>Total: <span id="total"></span></p>
+    <p>Preço: R$ <span id="preco"></span></p>
+    <button id="comprar">Comprar</button>
+  </div>
+
+  <script type="application/javascript">
+    const labelTotal = document.querySelector("#total");
+    const labelPreco = document.querySelector("#preco");
+    const btnTotal = document.querySelector("#comprar");
+
+    let contador = 1;
+    atualizarValores(1);
+
+    function atualizarValores(contador) {
+      labelTotal.innerText = contador;
+      labelPreco.innerText = contador * 250;
+    }
+
+    function handleClick() {
+      contador++;
+      atualizarValores(contador);
+      console.log(contador);
+    }
+
+    btnTotal.addEventListener('click', handleClick)
+
+  </script>
+
+  <div id="root"></div>
+
+  <script type="text/babel">
+
+    const App = () => {
+      const [contador, setContador] = React.useState(1)
+
+      const handleClick = () => {
+        setContador(contador + 1);
+      }
+
+      return <div>
+        <p>Total: {contador}</p>
+        <p>Preço: R$ {contador * 250}</p>
+        <button onClick={handleClick}>Comprar</button>
+      </div>
+    }
+
+
+    const container = document.querySelector("#root");
+    const root = ReactDOM.createRoot(container);
+    root.render(<App />)
+  </script>
+</body>
+
+</html>
