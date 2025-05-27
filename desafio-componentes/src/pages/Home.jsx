@@ -1,12 +1,12 @@
-import React from 'react'
-import Header from '../components/Header/Header'
+
+import Titulo from '../components/Titulo/Titulo'
 
 const Home = () => {
   return (
-    <>
-      <Header>Home</Header>
+    <section>
+      <Titulo texto="Home" />
       <p>Essa é a home do site</p>
-    </>
+    </section>
   )
 }
 

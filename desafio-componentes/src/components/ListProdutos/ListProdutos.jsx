@@ -1,3 +1,4 @@
+import './produtos.css'
 
 const ListProdutos = ({ produtos }) => {
   return (
