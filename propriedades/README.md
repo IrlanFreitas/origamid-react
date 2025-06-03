@@ -1,7 +1,7 @@
-# Propriedades/Props
+# Propriedades/Props ({ props })
 
 Assim como uma função pode receber argumentos, podemos também passar argumentos aos componentes.
-Esses são conhecimentos como propriedades ou props.
+Esses são conhecimentos como **propriedades ou props**.
 
 ```javascript
 const Titulo = (props) => {
@@ -18,11 +18,11 @@ const App = () => {
 }
 ```
 
-## Children
+## Children ({ props :{ children }})
 
 Se utilizarmos o componente abrindo e fechando o mesmo,
 o conteúdo interno deste será acessado através da propriedade
-`childen`.
+`children`.
 
 ```javascript
 const Titulo = (props) => {
@@ -42,7 +42,7 @@ const App = () => {
 };
 ```
 
-## Rest e Spread
+## Rest e Spread (...)
 
 Usamos o rest e spread quando não sabemos todas as propriedades
 que um componente pode receber.

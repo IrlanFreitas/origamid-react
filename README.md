@@ -60,13 +60,5 @@ menu.hasOwnProperty('class'); // método herdado
 * Module (Export/Import)
 * Fetch
 * Async / Await
-* Array (map e filter)
+* Array (map e filter, reduce)
 * Expressões
-
-## React para Iniciantes
-
-Explicar os conceitos básicos *
-
-Hooks
-
-* React Básico, Vite, JSX, Eventos, Components, Propriedades

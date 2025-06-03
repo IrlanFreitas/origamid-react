@@ -1,0 +1,53 @@
+.container {
+  width: 700px;
+  border-left: 3px solid lightcyan;
+  border-right: 3px solid lightcyan;
+  margin: 0 auto;
+  padding: 10px 20px;
+  text-align: center;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+}
+
+img {
+  width: 100%;
+}
+
+.titulo {
+  margin-bottom: 50px;
+  color: darkcyan;
+}
+
+.botoes {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.icon {
+  width: 40px;
+  margin: auto;
+}
+
+.results {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.produto {
+  margin-top: 10px;
+  text-align: left;
+}
+
+ul {
+  list-style: none;
+}
+
+.foto {
+  height: 300px;
+}

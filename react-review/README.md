@@ -5,7 +5,7 @@
 ## React Element
 
 Todo elemento React é criado com a função createElement.
-O Babel é o responsável por transformar o elemento criado com JSX
+O **Babel** é o responsável por transformar o elemento criado com JSX
 (que se parece com HTML) em funções de React.
 
 ```javascript

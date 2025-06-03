@@ -40,8 +40,8 @@ const App = () => {
 
 O caso especial mais comum é o atributo class.
 Pelo fato de classe ser uma palavra reservada do Javascript,
-o JSX resolver mudar o nome para evitar conflitos
-O correto é className.
+o JSX resolveu mudar o nome para evitar conflitos
+O correto é **className**.
 
 ```javascript
 const App = () => {
@@ -71,7 +71,7 @@ const App = () => {
 };
 ```
 
-## Expressões / Variáveis
+## Expressões / Variáveis {"se isso" === true ? "então isso" : "se não isso"}
 
 Expressões e variáveis podem ser colocados dentro do JSX, utilizando chaves `{}`
 
@@ -96,7 +96,7 @@ const App = () => {
 };
 ```
 
-## Style
+## Style style={{}}
 
 O style irá receber um objeto com as propriedades do elemento em camelCase.
 

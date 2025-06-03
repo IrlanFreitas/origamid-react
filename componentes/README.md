@@ -1,8 +1,11 @@
 # Componentes
 
+Componente é uma parte lógica, visual ou contextual de elementos html, jsx e css
+para realizar uma determinada função.
+
 ## Componentes
 
-O idela mesmo é dividir o aplicativo em pequenos componentes
+O ideal mesmo é dividir o aplicativo em pequenos componentes
 para facilitar a manutenção do mesmo.
 
 App:
