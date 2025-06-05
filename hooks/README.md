@@ -320,7 +320,7 @@ const App = () => {
       <hr />
       <button onClick={() => setContar(contar + 1)}>Contar</button>
     </div>
-  )
+  );
 };
 ```
 
@@ -330,35 +330,244 @@ As vezes precisamos executar um efeito sempre que um componente for desmontado.
 Para isso, utilizamos um callback no retorno do callback do efeito.
 
 Produto.js:
-```javascript
-  const Produto = () => {
-    // Utilizamos o useEffect para adicionarmos eventos diretos ao DOM
-    React.useEffect(() => {
-      function handleScroll(event) {
-        console.log(event);
-      }
-      window.addEventListener('scroll', handleScroll);
-      // Limpa o evento quando o elemento é removido do DOM.
-      return () => {
-        window.addEventListener('scroll', handleScroll);
-      }
-    }, []);
 
-    return <p style={{ height: '200vh'}}> Produto </p>;
-  }
+```javascript
+const Produto = () => {
+  // Utilizamos o useEffect para adicionarmos eventos diretos ao DOM
+  React.useEffect(() => {
+    function handleScroll(event) {
+      console.log(event);
+    }
+    window.addEventListener("scroll", handleScroll);
+    // Limpa o evento quando o elemento é removido do DOM.
+    return () => {
+      window.addEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  return <p style={{ height: "200vh" }}> Produto </p>;
+};
 ```
 
 App.js
-```javascript
-  const App = () => {
-    const [ativo, setAtivo] = React.useState(false);
 
-    return (
-      <div>
-        <p>Meu app</p>
-        <button onClick={() => setAtivo(true)}>Abrir</button>
-        {ativo && <Produto />}
-      </div>
-    )
-  }
+```javascript
+const App = () => {
+  const [ativo, setAtivo] = React.useState(false);
+
+  return (
+    <div>
+      <p>Meu app</p>
+      <button onClick={() => setAtivo(true)}>Abrir</button>
+      {ativo && <Produto />}
+    </div>
+  );
+};
 ```
+
+## useRef
+
+Retorna um objeto com a propriedade `current`.
+
+Esse objeto pode ser utilizado para guardarmos
+**valores que irão persistir durante todo o ciclo de vida do elemento**.
+
+Geralmente usamos o mesmo para nos referirmos a um elemento do DOM,
+sem precisarmos utilizar o `querySelector` ou similar.
+
+### .current
+
+o melhor momento de ser usado é dentro de um callback
+ou dentro de um useEffect após todos os elementos
+do componente serem atualizados.
+
+ele é current pq é um objeto mutável
+`video.current = 'Teste'`
+É algo completamente válido
+
+```javascript
+const App = () => {
+  const video = React.useRef();
+
+  React.useEffect(() => {
+    console.log(video.current.currentTime);
+  }, []);
+
+  return <video ref={video} />;
+};
+```
+
+## focus()
+
+é comum utilizarmos em formulários,
+quando precisamos de uma referência do elemento
+para colocarmos o mesmo em foco.
+
+```javascript
+const App = () => {
+  const [comentarios, setComentarios] = React.useState([]);
+  const [input, setInput] = React.state("");
+  const inputElement = React.useRef();
+};
+```
+
+## Referência
+
+O seu uso não é restrito a elementos do dom.
+Podemos utilizar também para guardarmos a referência de qualquer valor,
+como um **setTimeout por exemplo**.
+
+```javascript
+const App = () => {
+  const [contar, setContar] = React.useState(0);
+  const [contar, setContar] = React.useState(null);
+  const timeoutRef = React.useRef();
+
+  function handleClick() {
+    setNotificacao("Obrigado por comprar");
+    clearTimeout(timeoutRef.current);
+    timeoutRef.current = setTimeout(() => {
+      setNotificacao(null);
+    }, 1000);
+    setContar(contar + 1);
+  }
+};
+```
+
+## useMemo
+
+Memoriza um valor,
+evitando a recriação do mesmo todas as vezes em que um componente for atualizado. Recebe um callback e um array de dependências.
+
+Caso especifícos de calculos e etc.
+
+```javascript
+const App = () => {
+  const [contar, setContar] = React.useState(0);
+  const valor = React.useMemo(() => {
+    const localStorageItem = window.localStorage.getItem("produto");
+    // Só será executado uma vez
+    console.log("teste usememo");
+    return localStorageItem;
+  }, []);
+
+  return <button onClick={() => setContar(contar + 1)}>{contar}</button>;
+};
+```
+
+| Serve para casos em que você faz uma
+| operação lenta para retornar um valor.
+
+useMemo Teste:
+
+```javascript
+function operacaoLenta() {
+  let c;
+  for (let i = 0; i < 100000000; i++) {
+    c = i + i / 10;
+  }
+  return c;
+}
+
+const App = () => {
+  const [contar, setContar] = React.useState(0);
+  const t1 = performance.now();
+  const valor = React.useMemo(() => operacaoLenta(), []);
+
+  // é mais rápido que
+  // const valor = operacaoLenta();
+  console.log(performance.now() - t1);
+
+  return <button onClick={() => setContar(contar + 1)}>{valor}</button>;
+};
+```
+
+## useCallback
+
+Permite definirmos um callback e uma lista de dependências do callback.
+Esse callback só será recriado se essa lista de dependências for modificada,
+caso contrário ele não irá recriar o callback.
+
+```javascript
+const App = () => {
+  const [contar, setContar] = React.useState(0);
+
+  const handleClick = React.useCallback(() => {
+    setContar((contar) => contar + 1);
+  }, []);
+};
+```
+
+| Dificilmente você irá encontrar
+| um cenário em que essa função seja útil
+
+## useCallback Teste
+
+Uma prova de que o useCallback não irá criar uma nova função.
+Isso não significa que ele é mais ou menos otimizado.
+O Set() é utilizado pois ele permite apenas valores únicos dentro do mesmo.
+
+```javascript
+const set1 = new Set();
+const set2 = new Set();
+
+const Produto = () => {
+  const func1 = () => {
+    console.log("Teste");
+  };
+
+  const func2 = React.useCallback(() => {
+    console.log("Teste");
+  }, []);
+
+  set1.add(func1);
+  set2.add(func2);
+
+  console.log("Set1:", set1);
+  console.log("Set2:", set2);
+  return (
+    <div>
+      <p onClick={func1}>Produto 1</p>
+      <p onClick={func2}>Produto 2</p>
+    </div>
+  );
+};
+
+const App = () => {
+  const [contar, setContar] = React.useState(0);
+
+  return (
+    <div>
+      <Produto />
+      <button onClick={() => setContar(contar + 1)}>{contar}</button>
+    </div>
+  );
+};
+```
+
+## useContext
+
+antes de falar do `useContext` temos que aprender sobre o:
+`createContext`
+
+## createContext
+O contexto irá permitir passarmos dados/estado a todos os
+componentes, sem a necessidade de utilizar propriedades.
+
+Serve principalmente para dados/estados globais como por exemplo
+dados do usuário logado.
+
+**UserContext.js**
+```javascript
+  import React from 'React';
+
+  const UserContext = React.createContext();
+
+  export default UserContext;
+```
+
+Entendendo sobre o `Consumer` e o `Provider`
+
+## Provider
+
+

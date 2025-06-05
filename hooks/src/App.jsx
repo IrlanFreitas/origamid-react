@@ -1,7 +1,32 @@
 import React from 'react'
 import Modal from './Modal';
 import ButtonModal from './ButtonModal';
+import UseRefTest from './UseRefTest';
+import UseMemoTest from './UseMemoTest';
+import UserContext from './UseContextCase/UserContext';
+import Produto from './UseContextCase/Produto';
+import { GlobalStorage } from './UseContextCase/GlobalContext'
 
+// * useRef
+// const App = () => {
+//   return <UseRefTest />
+// }
+
+// * useMemo
+// const App = () => {
+//   return <UseMemoTest />
+// }
+
+// * useContext - exemplo básico
+// f
+
+// * useContext - exemplo mais elaborado
+const App = () => {
+
+  return <GlobalStorage> <Produto /> </GlobalStorage>
+}
+
+// * useState muitos exemplos
 // function App() {
 //   const [contar, setContar] = useState(0);
 //   const [ativo, setAtivo] = useState(false);
@@ -29,16 +54,17 @@ import ButtonModal from './ButtonModal';
 //   )
 // }
 
-const App = () => {
-  const [contar, setContar] = React.useState(0);
-  const titulo = 'Clicou ';
+// * useState + useEffect
+// const App = () => {
+//   const [contar, setContar] = React.useState(0);
+//   const titulo = 'Clicou ';
 
-  React.useEffect(() => {
-    document.title = titulo + contar;
-  }, [contar])
+//   React.useEffect(() => {
+//     document.title = titulo + contar;
+//   }, [contar])
 
-  return <button onClick={() => setContar(contar + 1)}>{contar}</button>;
-}
+//   return <button onClick={() => setContar(contar + 1)}>{contar}</button>;
+// }
 
 // const App = () => {
 //   const [contar, setContar] = useState(0);
