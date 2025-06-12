@@ -1,13 +1,14 @@
 # JSX
 
-Javascript XML/Extension. Estende a sintaxe do JavaScript,
+**Javascript XML/Extension.**
+Estende a sintaxe do JavaScript,
 introduzindo elementos como xml que são convertidos em funções
 de React.
 
 ```javascript
-const App = () => [
+const App = () => {
   return <button>Comprar</button>
-]
+};
 ```
 
 é transformado em:
@@ -73,7 +74,7 @@ const App = () => {
 
 ## Expressões / Variáveis {"se isso" === true ? "então isso" : "se não isso"}
 
-Expressões e variáveis podem ser colocados dentro do JSX, utilizando chaves `{}`
+Expressões e variáveis podem ser colocados dentro do JSX, utilizando chaves `{}`.
 
 ```javascript
 const App = () => {

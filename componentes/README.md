@@ -9,7 +9,6 @@ O ideal mesmo é dividir o aplicativo em pequenos componentes
 para facilitar a manutenção do mesmo.
 
 App:
-
 ```javascript
 import React from "react";
 import Header from "./Header";
@@ -29,7 +28,6 @@ export default App;
 ```
 
 Header:
-
 ```javascript
 import React from "react";
 
@@ -55,7 +53,6 @@ eles podem ser desde componentes gerais como Header e Footer,
 até micro componentes como Input e Button.
 
 Form.js:
-
 ```javascript
 import React from "react";
 import Button from "./Button";
@@ -81,7 +78,6 @@ export default Form;
 ```
 
 Button.js:
-
 ```javascript
 import React from "react";
 
@@ -93,7 +89,6 @@ export default Button;
 ```
 
 Input.js:
-
 ```javascript
 import React from "react";
 

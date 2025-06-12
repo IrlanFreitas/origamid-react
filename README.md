@@ -34,31 +34,3 @@ Projeto do curso: https://www.dogs.origamid.dev/
     * Origamid Next Theme
     * Live Server, Color Highlight, Prettier, ES7 React/Redux/ GraphQL snippets
 * React Developer Tools
-
-## Revisão de Javascript
-
-* Tudo é objeto
-Um objeto possui propriedades e métodos que podem ser diretos ou herdados(protótipo).
-
-```javascript
-// Objeto literal
-const menu = {
-  selector: '.principal',
-  active () {
-    const menuElement = document.querySelector(this.selector);
-    menuElement.classList.add('active');
-  }
-}
-
-menu.selector; // ".principal";
-menu.active(); // adicionar active ao menu
-menu.hasOwnProperty('class'); // método herdado
-```
-* Arrow Function
-* Destructuring
-* Rest e Spread
-* Module (Export/Import)
-* Fetch
-* Async / Await
-* Array (map e filter, reduce)
-* Expressões

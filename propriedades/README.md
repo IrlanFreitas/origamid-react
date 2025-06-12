@@ -8,6 +8,12 @@ const Titulo = (props) => {
   return <h1 style={{color: props.cor}}>{props.texto}</h1>
 }
 
+// * OU 
+
+const Titulo = ({cor, texto}) => {
+  return <h1 style={{color: cor}}>{texto}</h1>
+}
+
 const App = () => {
   return (
     <section>
@@ -54,14 +60,13 @@ const Input = ({label, id, ...props}) => {
   return (
     <div>
       <label htmlFor={id}>{label}</label>
-      <input id={id} type="text" {...props}>
+      <input id={id} type="text" {...props} />
     </div>
   );
 };
 
 export default Input;
 ```
-
 | Podemos ser criativos com a propriedades
 
 ## Dados

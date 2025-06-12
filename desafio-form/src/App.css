@@ -1,0 +1,12 @@
+.form {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.label {
+  text-transform: capitalize;
+}
+
+body {
+  min-width: 100vw;
+}
