@@ -130,7 +130,7 @@ const App = () => {
 
   function handleChange({ target }) {
     const { id, value } = target;
-    setForm({ ...form, [id]: value})
+    setForm({ ...form, [id]: value });
   }
 
   return (
@@ -165,6 +165,92 @@ const App = () => {
 };
 ```
 
-## Objeto
-
 ## Exercício
+
+## Textarea
+
+No React o `textarea` é utilizado como um input,
+um tag única sem abertura/fechamento e com o value
+para definir o seu valor interno.
+
+```javascript
+  const App = () => {
+    const [mensagem, setMensagem] = React.useState('');
+
+    return (
+      <form>
+        <textarea
+          id="mensagem"
+          value={mensagem}
+          rows="5"
+          onChange={({target}) => setMensagem(target.value)}
+        >
+        <p>{mensagem}</p>
+      </form>
+    )
+  }
+```
+
+## Select
+
+O `value` e `onChange` são definidos no select.
+Para definir um valor inicial, coloque o mesmo no `useState`.
+
+```javascript
+  const App = () => {
+    const [select, setSelect] = React.useState('smartphone');
+
+    return (
+      <form>
+        <select value={select} onChange={({target}) => {setSelect(target.value)}}>
+          <option value="notebook">Notebook<option>
+          <option value="smartphone">Smartphone<option>
+          <option value="tablet">Tablet<option>
+        </select>
+        <p>{select}<p>
+      </form>
+    )
+  }
+```
+
+## Radio
+
+No radio comparamos o valor selecionado com o valor do input,
+dentro do atributo checked. O que retornar true irá marcar o botão.
+
+```javascript
+const App = () => {
+  const [radio, setRadio] = React.useState("");
+
+  function handleChange({ target }) {
+    setRadio(target.value);
+  }
+};
+
+return (
+  <form>
+    <label>
+      <input
+        type="radio"
+        value="smartphone"
+        name="produto"
+        checked={radio === "smartphone"}
+        onChange={handleChange}
+      >
+        Smartphone
+      </input>
+    </label>
+    <label>
+      <input
+        type="radio"
+        value="notebook"
+        name="produto"
+        checked={radio === "notebook"}
+        onChange={handleChange}
+      >
+        Notebook
+      </input>
+    </label>
+  </form>
+);
+```

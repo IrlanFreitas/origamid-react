@@ -48,8 +48,6 @@ function App() {
 
   }
 
-
-
   const handleChange = ({ target }) => {
     const { id, value } = target
     setForm({ ...form, [id]: value })
