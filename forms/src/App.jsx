@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Input from "./Form/Input";
+import Select from "./Form/Select";
 
 // * Versão 1
 // function App() {
@@ -69,6 +71,7 @@ const App = () => {
   const [form, setForm] = useState({
     nome: "",
     email: "",
+    produto: "",
   });
 
   function handleSubmit(event) {
@@ -83,26 +86,24 @@ const App = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="nome" style={{ marginBottom: 10 }}>
-        Nome:
-      </label>
-      <input
+
+      <Input
+        id="nome"
+        label={"Nome:"}
         type="text"
         name="nome"
-        id="nome"
         value={form.nome}
-        onChange={handleChange}
-      />
-      <label htmlFor="email" style={{ marginBottom: 10 }}>
-        Email:
-      </label>
-      <input
+        onChange={handleChange} />
+      <Input
+        id="email"
+        label={"Email:"}
         type="email"
         name="email"
-        id="email"
         value={form.email}
-        onChange={handleChange}
-      />
+        onChange={handleChange} />
+
+      <Select opcoes={["notebook", "smartphone", "tablet"]} value={form.produto} setValue={value => { setForm({...form, produto: value})}}/>
+
 
       <div>
         <button type="submit">Enviar</button>

@@ -359,3 +359,24 @@ const App = () => {
   );
 };
 ```
+
+## Component Input
+
+Podemos definir um componente para cada tipo de campo de formulário,
+assim evitamos criar código repetido.
+
+Input.js
+```javascript
+  const Input = ({ id, label, setValue, ...props}) => {
+    return (
+      <> 
+        <label htmlFor={id}>{label}</label>
+        <input
+        id={id}
+        name={id}
+        onChange={({ target }) => setValue(target.value)}
+        {...props} />
+      </>
+    )
+  }
+```
