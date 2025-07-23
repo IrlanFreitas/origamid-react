@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import Opcoes from './Components/Opcoes';
 
 const perguntas = [
   {
@@ -44,7 +45,7 @@ function App() {
   const checkAnswers = () => {
     perguntas.map(pergunta => {
       let checagem = respostas.includes(pergunta.resposta)
-      if (checagem) setAssercoes(prevState => prevState + 1)
+      if (checagem) setAssercoes(assercoes + 1)
     })
   }
 
@@ -69,12 +70,9 @@ function App() {
           <div className='container'>
             <h1 className='pergunta'>{perguntas[index].pergunta}</h1>
 
-            <div className='opcoes'>
-              {perguntas[index]?.options?.map(opcao => <label key={opcao}>
-                <input type='radio' id={opcao} name={index} value={opcao}
-                  onChange={() => setRespostas(prevState => [...prevState, opcao])} />{opcao}
-              </label>)}
-            </div>
+            <Opcoes index={index}
+              options={perguntas[index]?.options}
+              setRespostas={setRespostas} />
           </div>
           <button>Próxima</button>
         </form>}
