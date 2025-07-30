@@ -43,9 +43,9 @@ function App() {
   const [assercoes, setAssercoes] = useState(0)
 
   const checkAnswers = () => {
-    perguntas.map(pergunta => {
+    perguntas.forEach(pergunta => {
       let checagem = respostas.includes(pergunta.resposta)
-      if (checagem) setAssercoes(assercoes + 1)
+      if (checagem) setAssercoes(prevState => prevState + 1)
     })
   }
 

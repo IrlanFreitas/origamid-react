@@ -1,0 +1,29 @@
+.container {
+  /* Serve para esconder tudo que passar do tamanho da tela, a ideia de slide é justamente essa, tudo que passar será exibido quando for a sua vez */
+  overflow: hidden;
+}
+
+.content {
+  /* Para alinhar um item ao lado do outro */
+  display: flex;
+  /* Sempre que tiver uma transição, mudança de tamanho, movimentação e por ai vai, ele .3 milisegundos (recomendado entre .3 e .5) ele faça de forma suave - ease */
+  transition: transform .3s ease;
+}
+
+.item {
+  /* Para que o item não encolha, mesmo que a tela seja pequena */
+  flex-shrink: 0;
+  width: 80%;
+  margin: 0 10%;
+  padding: 10rem 0;
+  background:#eee;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem auto;
+  width: 80%;
+}
