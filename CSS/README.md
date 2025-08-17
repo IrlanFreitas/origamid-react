@@ -461,6 +461,23 @@ npm install bootstrap@next
 
 ## Animações
 
-projetinho de animaçõesT
+projetinho de animações
+
+## Imagens
+
+Podemos importar a imagem direto para o componente.
+O webpack irá gerar o caminho correto na build final.
+
+```js
+import foto from './img/foto.jpg';
+
+const App = () => {
+  return (
+    <div>
+      <img src={foto} alt="Cachorro">
+    </div>
+  )
+}
+```
 
 
