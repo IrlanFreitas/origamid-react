@@ -1,0 +1,45 @@
+.produto-imagem {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.25);
+}
+
+.produto-titulo {
+  font-size: 2rem;
+}
+
+.produto-container-imagem {
+  width: 100%;
+  height: 40%;
+  margin-bottom: 50px;
+  // height: 400px;
+}
+
+.produto {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.produto-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.produto-preco {
+  color: green;
+  background-color: greenyellow;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.produto-nome {
+  font-size: 1.5rem;
+}
+
+.produto-descricao {
+  font-size: 1.5rem;
+}

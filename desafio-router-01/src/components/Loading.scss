@@ -1,0 +1,21 @@
+.loading-container {
+  display: flex;
+  justify-content: center;
+  height: 80vh;
+  align-items: center;
+}
+
+.loading-icon {
+  width: 40px;
+  height: 40px;
+  animation: girar 1s linear infinite forwards;
+}
+
+@keyframes girar {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

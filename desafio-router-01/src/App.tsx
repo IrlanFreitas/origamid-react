@@ -1,67 +1,31 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
+import { BrowserRouter, Route, Routes, NavLink } from "react-router-dom";
 import "./App.scss";
 import Produtos from "./pages/Produtos/Produtos";
+import Contato from "./pages/Contato/Contato";
+import DetalheProduto from "./pages/DetalheProduto/DetalheProduto";
 
 function App() {
   return (
     <>
-      <div className="container">
-        <nav className="botoes">
-          <p className="btn-navega">Produtos</p>
-          <p className="btn-navega"> Contato</p>
-        </nav>
-        <div className="">
-          <Produtos />
-          {/* <div className="produto-card">
-            <img
-              className="produto-imagem"
-              src="https://ranekapi.origamid.dev/wp-content/uploads/2019/03/notebook.jpg"
-              alt="Notebook"
-            />
-            <h1 className="produto-titulo">Notebook</h1>
-          </div>
-          <div className="produto-card">
-            <img
-              className="produto-imagem"
-              src="https://ranekapi.origamid.dev/wp-content/uploads/2019/03/notebook.jpg"
-              alt="Notebook"
-            />
-            <h1 className="produto-titulo">Notebook</h1>
-          </div>
-          <div className="produto-card">
-            <img
-              className="produto-imagem"
-              src="https://ranekapi.origamid.dev/wp-content/uploads/2019/03/notebook.jpg"
-              alt="Notebook"
-            />
-            <h1 className="produto-titulo">Notebook</h1>
-          </div>
-          <div className="produto-card">
-            <img
-              className="produto-imagem"
-              src="https://ranekapi.origamid.dev/wp-content/uploads/2019/03/notebook.jpg"
-              alt="Notebook"
-            />
-            <h1 className="produto-titulo">Notebook</h1>
-          </div>
-          <div className="produto-card">
-            <img
-              className="produto-imagem"
-              src="https://ranekapi.origamid.dev/wp-content/uploads/2019/03/notebook.jpg"
-              alt="Notebook"
-            />
-            <h1 className="produto-titulo">Notebook</h1>
-          </div>
-          <div className="produto-card">
-            <img
-              className="produto-imagem"
-              src="https://ranekapi.origamid.dev/wp-content/uploads/2019/03/notebook.jpg"
-              alt="Notebook"
-            />
-            <h1 className="produto-titulo">Notebook</h1>
-          </div> */}
+      <BrowserRouter>
+        <div className="container">
+          <nav className="botoes">
+            <NavLink className="btn-navega" to="/">
+              Produto
+            </NavLink>
+            <NavLink className="btn-navega" to="contato">
+              Contato
+            </NavLink>
+          </nav>
+          <main>
+            <Routes>
+              <Route index element={<Produtos />} />
+              <Route path="produto/:id" element={<DetalheProduto />} />
+              <Route path="contato" element={<Contato />} />
+            </Routes>
+          </main>
         </div>
-      </div>
+      </BrowserRouter>
     </>
   );
 }

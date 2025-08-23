@@ -1,7 +1,11 @@
 .container {
-  width: 60%;
+  width: 70%;
   height: 100vh;
   margin: auto;
+}
+
+main {
+  margin-top: 50px;
 }
 
 html {
@@ -15,10 +19,8 @@ img {
   width: 100%;
 }
 
-
-
 .botoes {
-  margin: 1.5rem 0;
+  margin: 2.5rem 0;
   display: flex;
   gap: 10px;
 }
@@ -28,8 +30,12 @@ img {
   background-color: lightgray;
   border-radius: 5px;
   font-size: 1.5rem;
+  text-decoration: none;
+  color: #494949;
 }
 
-.produto-imagem {
-  border-radius: 5px;
+.btn-navega.active{
+  color: black;
+  background-color: gray;
 }
+
