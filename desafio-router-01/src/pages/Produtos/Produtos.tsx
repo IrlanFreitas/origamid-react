@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useEffect, useState } from "react";
 import { obterProdutos } from "../../service/produtos.service";
 import type { Produto } from "../../types/produto.type";

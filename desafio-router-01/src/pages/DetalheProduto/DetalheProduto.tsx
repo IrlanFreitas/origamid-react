@@ -37,14 +37,14 @@ const DetalheProduto = () => {
       )}
       {error && <>Criar uma tela de error</>}
       {!loading && (
-        <div className="produto">
-          <div className="produto-fotos">
+        <div className="detalhe-produto">
+          <div className="detalhe-produto-fotos">
             {produto?.fotos?.map((foto) => {
               return (
                 <>
-                  <div className="produto-container-imagem">
+                  <div className="detalhe-produto-container-imagem">
                     <img
-                      className="produto-imagem"
+                      className="detalhe-produto-imagem"
                       src={foto.src}
                       alt={foto.titulo}
                     />

@@ -1,4 +1,4 @@
-.produto-imagem {
+.detalhe-produto-imagem {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -10,14 +10,13 @@
   font-size: 2rem;
 }
 
-.produto-container-imagem {
+.detalhe-produto-container-imagem {
   width: 100%;
   height: 40%;
   margin-bottom: 50px;
-  // height: 400px;
 }
 
-.produto {
+.detalhe-produto {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;

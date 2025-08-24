@@ -11,7 +11,7 @@ function App() {
         <div className="container">
           <nav className="botoes">
             <NavLink className="btn-navega" to="/">
-              Produto
+              Produtos
             </NavLink>
             <NavLink className="btn-navega" to="contato">
               Contato

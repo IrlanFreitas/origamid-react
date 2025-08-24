@@ -1,0 +1,25 @@
+.contato {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 30px;
+}
+
+.contato-imagem {
+  border-radius: 20px;
+  height: 80%;
+  box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.25);
+}
+
+.contato-titulo {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.contato-info p::before {
+  content: "";
+  width: 20px;
+  height: 3px;
+  margin-right: 5px;
+  display: inline-block;
+  background-color: rgb(211, 210, 210);
+}
