@@ -1,5 +1,5 @@
 import "./Loading.scss";
-import loading from '../assets/loading.png'
+import loading from '../../assets/loading.png'
 
 const Loading = () => {
   return <div className="loading-container">

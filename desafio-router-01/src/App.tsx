@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes, NavLink } from "react-router-dom";
-import "./App.scss";
+import styles from "./App.module.scss";
 import Produtos from "./pages/Produtos/Produtos";
 import Contato from "./pages/Contato/Contato";
 import DetalheProduto from "./pages/DetalheProduto/DetalheProduto";
@@ -8,16 +8,26 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <div className="container">
-          <nav className="botoes">
-            <NavLink className="btn-navega" to="/">
+        <div className={styles.container}>
+          <nav className={styles.botoes}>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? styles.botaoNavegarAtivo : styles.botaoNavegar
+              }
+              to="/"
+            >
               Produtos
             </NavLink>
-            <NavLink className="btn-navega" to="contato">
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? styles.botaoNavegarAtivo : styles.botaoNavegar
+              }
+              to="contato"
+            >
               Contato
             </NavLink>
           </nav>
-          <main>
+          <main className="main">
             <Routes>
               <Route index element={<Produtos />} />
               <Route path="produto/:id" element={<DetalheProduto />} />

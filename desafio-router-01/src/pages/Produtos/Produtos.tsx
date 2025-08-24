@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { obterProdutos } from "../../service/produtos.service";
 import type { Produto } from "../../types/produto.type";
 import "./Produtos.scss";
-import Loading from "../../components/Loading";
+import Loading from "../../components/Loading/Loading";
 import { useNavigate } from "react-router-dom";
 
 const Produtos = () => {

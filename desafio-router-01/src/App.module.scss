@@ -3,7 +3,7 @@
   margin: auto;
 }
 
-main {
+.main {
   margin-top: 50px;
 }
 
@@ -34,7 +34,7 @@ img {
   gap: 10px;
 }
 
-.btn-navega {
+.botaoNavegar {
   padding: .8rem 1.3rem;
   background-color: lightgray;
   border-radius: 5px;
@@ -43,8 +43,12 @@ img {
   color: #494949;
 }
 
-.btn-navega.active{
+.botaoNavegarAtivo {
+  padding: .8rem 1.3rem;
+  background-color: lightgray;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  text-decoration: none;
   color: black;
   background-color: gray;
 }
-

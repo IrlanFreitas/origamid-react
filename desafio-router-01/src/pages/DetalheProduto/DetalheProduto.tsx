@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import type { Produto } from "../../types/produto.type";
 import { obterDetalheProduto } from "../../service/produtos.service";
-import Loading from "../../components/Loading";
+import Loading from "../../components/Loading/Loading";
 import "./DetalheProduto.scss";
 
 const DetalheProduto = () => {
