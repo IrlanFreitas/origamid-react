@@ -24,6 +24,9 @@ function App() {
               <Route path="contato" element={<Contato />} />
             </Routes>
           </main>
+          <footer>
+            <p>Alguns direitos reservados.</p>
+          </footer>
         </div>
       </BrowserRouter>
     </>
