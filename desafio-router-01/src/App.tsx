@@ -1,32 +1,17 @@
-import { BrowserRouter, Route, Routes, NavLink } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import styles from "./App.module.scss";
 import Produtos from "./pages/Produtos/Produtos";
 import Contato from "./pages/Contato/Contato";
 import DetalheProduto from "./pages/DetalheProduto/DetalheProduto";
+import Footer from "./components/Footer/Footer";
+import Header from "./components/Header/Header";
 
 function App() {
   return (
     <>
       <BrowserRouter>
         <div className={styles.container}>
-          <nav className={styles.botoes}>
-            <NavLink
-              className={({ isActive }) =>
-                isActive ? styles.botaoNavegarAtivo : styles.botaoNavegar
-              }
-              to="/"
-            >
-              Produtos
-            </NavLink>
-            <NavLink
-              className={({ isActive }) =>
-                isActive ? styles.botaoNavegarAtivo : styles.botaoNavegar
-              }
-              to="contato"
-            >
-              Contato
-            </NavLink>
-          </nav>
+          <Header />
           <main className="main">
             <Routes>
               <Route index element={<Produtos />} />
@@ -34,9 +19,7 @@ function App() {
               <Route path="contato" element={<Contato />} />
             </Routes>
           </main>
-          <footer>
-            <p>Alguns direitos reservados.</p>
-          </footer>
+          <Footer />
         </div>
       </BrowserRouter>
     </>

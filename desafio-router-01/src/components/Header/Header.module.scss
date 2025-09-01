@@ -1,0 +1,24 @@
+.botoes {
+  margin: 2.5rem 0;
+  display: flex;
+  gap: 10px;
+}
+
+.botaoNavegar {
+  padding: .8rem 1.3rem;
+  background-color: lightgray;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: #494949;
+}
+
+.botaoNavegarAtivo {
+  padding: .8rem 1.3rem;
+  background-color: lightgray;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: black;
+  background-color: gray;
+}
