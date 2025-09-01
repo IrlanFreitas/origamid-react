@@ -37,7 +37,7 @@ const DetalheProduto = () => {
       )}
       {error && <>Criar uma tela de error</>}
       {!loading && (
-        <div className="detalhe-produto">
+        <section className="detalhe-produto animeLeft">
           <div className="detalhe-produto-fotos">
             {produto?.fotos?.map((foto) => {
               return (
@@ -60,7 +60,7 @@ const DetalheProduto = () => {
             </p>
             <p className="produto-descricao">{produto?.descricao}</p>
           </div>
-        </div>
+        </section>
       )}
     </>
   );

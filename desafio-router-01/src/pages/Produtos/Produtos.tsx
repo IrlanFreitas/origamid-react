@@ -4,6 +4,7 @@ import type { Produto } from "../../types/produto.type";
 import "./Produtos.scss";
 import Loading from "../../components/Loading/Loading";
 import { useNavigate } from "react-router-dom";
+import Head from "../../components/Head/Head";
 
 const Produtos = () => {
   const [produtos, setProdutos] = useState<Produto[]>([]);
@@ -37,6 +38,7 @@ const Produtos = () => {
 
   return (
     <>
+      <Head title="Ranek | Produtos" description="Tela de listagem de produtos" />
       {loading && (
         <>
           <Loading />
@@ -47,7 +49,7 @@ const Produtos = () => {
         {!loading &&
           produtos?.map((produto) => (
             <div
-              className="produto-card"
+              className="produto-card animeLeft"
               onClick={(event) => handleClick(event, produto.id)}
             >
               <div className="produto-container-imagem">
