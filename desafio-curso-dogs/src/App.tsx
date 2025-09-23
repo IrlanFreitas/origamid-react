@@ -1,11 +1,12 @@
+import "./App.css";
+import Api from "./api/Api";
 
 function App() {
-
   return (
     <>
-    Hello World.
+      <Api />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
