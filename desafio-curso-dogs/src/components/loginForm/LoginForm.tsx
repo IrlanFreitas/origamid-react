@@ -44,27 +44,25 @@ const LoginForm = () => {
       <div>
         <h1>Login</h1>
         <form onSubmit={handleSubmit}>
-          <label htmlFor="login">Login</label>
           <Input
+            label="Login"
             type="text"
-            name="login"
-            id="login"
+            name="username"
             value={username}
             onChange={(event: ChangeEvent<HTMLInputElement>) => {
               setUsername(event.target.value);
             }}
           />
-          <label htmlFor="login">Senha</label>
           <Input
             type="password"
+            label="Senha"
             name="password"
-            id="password"
             value={password}
             onChange={(event: ChangeEvent<HTMLInputElement>) => {
               setPassword(event.target.value);
             }}
           />
-          <Button type="submit">Enviar</Button>
+          <Button type="submit">Entrar</Button>
         </form>
 
         <Link to="/login/criar">Cadastro</Link>
