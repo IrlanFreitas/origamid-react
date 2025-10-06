@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useState, type ChangeEvent } from "react";
 import { Link } from "react-router-dom";
 import img from "../../assets/login.jpg";
 import styles from "./LoginForm.module.scss";
+import Input from "../input/Input";
+import Button from "../button/Button";
 
 const LoginForm = () => {
   const [username, setUsername] = useState<string>();
@@ -43,26 +45,26 @@ const LoginForm = () => {
         <h1>Login</h1>
         <form onSubmit={handleSubmit}>
           <label htmlFor="login">Login</label>
-          <input
+          <Input
             type="text"
             name="login"
             id="login"
             value={username}
-            onChange={({ target }) => {
-              setUsername(target.value);
+            onChange={(event: ChangeEvent<HTMLInputElement>) => {
+              setUsername(event.target.value);
             }}
           />
           <label htmlFor="login">Senha</label>
-          <input
+          <Input
             type="password"
             name="password"
             id="password"
             value={password}
-            onChange={({ target }) => {
-              setPassword(target.value);
+            onChange={(event: ChangeEvent<HTMLInputElement>) => {
+              setPassword(event.target.value);
             }}
           />
-          <button type="submit">Enviar</button>
+          <Button type="submit">Enviar</Button>
         </form>
 
         <Link to="/login/criar">Cadastro</Link>
