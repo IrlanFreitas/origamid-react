@@ -8,7 +8,7 @@ const types = {
   },
 } as any;
 
-const useForm = (type: string) => {
+const useForm = (type?: string) => {
   const [value, setValue] = useState("");
   const [error, setError] = useState<string | null>(null);
 
@@ -16,7 +16,7 @@ const useForm = (type: string) => {
     if (value.length === 0) {
       setError("Preencha com um valor.");
       return false;
-    } else if (types[type] && !types[type].regex.test(value)) {
+    } else if (type && types[type] && !types[type].regex.test(value)) {
       setError(types[type].message);
       return false;
     } else {
