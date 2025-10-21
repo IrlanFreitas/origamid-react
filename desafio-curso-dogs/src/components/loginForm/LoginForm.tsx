@@ -1,4 +1,4 @@
-import { useEffect, useContext, useRef } from "react";
+import { useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import img from "../../assets/login.jpg";
 import styles from "./LoginForm.module.scss";
@@ -7,10 +7,11 @@ import Button from "../button/Button";
 import useForm from "../../hooks/useForm";
 import * as service from "../../services/api";
 import { UserContext } from "../../contexts/UserContext";
+import Error from "../error/Error";
+import stylesButton from "../button/Button.module.scss";
 
 const LoginForm = () => {
   const { userLogin, error, loading } = useContext<any>(UserContext);
-  const divRef = useRef<HTMLParagraphElement | null>(null);
 
   const username = useForm();
   const password = useForm();
@@ -21,17 +22,6 @@ const LoginForm = () => {
       service.getUser(token);
     }
   }, []);
-
-  useEffect(() => {
-    if (divRef.current) {
-      setTimeout(() => {
-        const el = divRef.current;
-        if (el) {
-          el.style.display = "none";
-        }
-      }, 3000);
-    }
-  }, [error]);
 
   const handleSubmit = async (event: any) => {
     event.preventDefault();
@@ -47,9 +37,9 @@ const LoginForm = () => {
         src={img}
         alt="Um cachorro com uma touca amarela e uma blusinha cinza"
       />
-      <div>
-        <h1>Login</h1>
-        <form onSubmit={handleSubmit}>
+      <div className="animeLeft">
+        <h1 className="title">Login</h1>
+        <form className={styles.form} onSubmit={handleSubmit}>
           <Input label="Login" type="text" name="username" {...username} />
           <Input type="password" label="Senha" name="password" {...password} />
           {loading ? (
@@ -57,16 +47,24 @@ const LoginForm = () => {
           ) : (
             <Button type="submit">Entrar</Button>
           )}
-          {error && (
-            <p ref={divRef} id="error">
-              {error}
-            </p>
-          )}
+
+          <Error error={String(error)} />
         </form>
 
-        {/* <p style={{ wordBreak: "break-all" }}>{token?.token}</p> */}
-
-        <Link to="/login/criar">Cadastro</Link>
+        <br />
+        <br />
+        <Link className={styles.perdeu} to="/login/perdeu">
+          Esqueceu a senha?
+        </Link>
+        <br />
+        <br />
+        <div className={styles.cadastro}>
+          <h2 className={styles.subtitle}>Cadastre-se</h2>
+          <p>Ainda não possui conta? Cadastre-se no site.</p>
+        </div>
+        <Link className={stylesButton.button} to="/login/criar">
+          Cadastro
+        </Link>
       </div>
     </section>
   );
