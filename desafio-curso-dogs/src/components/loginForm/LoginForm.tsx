@@ -32,40 +32,39 @@ const LoginForm = () => {
   };
 
   return (
-    <section className={styles.container}>
-      <img
+    <section className="animeLeft">
+      {/* <img
         src={img}
         alt="Um cachorro com uma touca amarela e uma blusinha cinza"
       />
-      <div className="animeLeft">
-        <h1 className="title">Login</h1>
-        <form className={styles.form} onSubmit={handleSubmit}>
-          <Input label="Login" type="text" name="username" {...username} />
-          <Input type="password" label="Senha" name="password" {...password} />
-          {loading ? (
-            <Button disabled>Carregando...</Button>
-          ) : (
-            <Button type="submit">Entrar</Button>
-          )}
+      <div > */}
+      <h1 className="title">Login</h1>
+      <form className={styles.form} onSubmit={handleSubmit}>
+        <Input label="Login" type="text" name="username" {...username} />
+        <Input type="password" label="Senha" name="password" {...password} />
+        {loading ? (
+          <Button disabled>Carregando...</Button>
+        ) : (
+          <Button type="submit">Entrar</Button>
+        )}
 
-          <Error error={String(error)} />
-        </form>
+        <Error error={String(error)} />
+      </form>
 
-        <br />
-        <br />
-        <Link className={styles.perdeu} to="/login/perdeu">
-          Esqueceu a senha?
-        </Link>
-        <br />
-        <br />
-        <div className={styles.cadastro}>
-          <h2 className={styles.subtitle}>Cadastre-se</h2>
-          <p>Ainda não possui conta? Cadastre-se no site.</p>
-        </div>
-        <Link className={stylesButton.button} to="/login/criar">
-          Cadastro
-        </Link>
+      <br />
+      <br />
+      <Link className={styles.perdeu} to="/login/perdeu">
+        Esqueceu a senha?
+      </Link>
+      <br />
+      <br />
+      <div className={styles.cadastro}>
+        <h2 className={styles.subtitle}>Cadastre-se</h2>
+        <p>Ainda não possui conta? Cadastre-se no site.</p>
       </div>
+      <Link className={stylesButton.button} to="/login/criar">
+        Cadastro
+      </Link>
     </section>
   );
 };
