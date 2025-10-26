@@ -1,18 +1,6 @@
-const apiUrl = import.meta.env.VITE_API_URL;
+import type { Token } from "../types/Token";
 
-interface Token {
-  token: string;
-  user_display_name: string;
-  user_email: string;
-  user_nicename: string;
-}
-
-interface User {
-  email: string;
-  id: number;
-  nome: string;
-  username: string;
-}
+ export const apiUrl = import.meta.env.VITE_API_URL;
 
 const generateToken = async (
   username: string,
@@ -57,7 +45,7 @@ const getUser = async (token: string): Promise<Response> => {
 
 const validateToken = async (token: string): Promise<Response> => {
   try {
-    const result = await fetch(apiUrl + "/jwt-auth/v1/token/validate", {
+    const result = await fetch(apiUrl + "/api/user", {
       method: "POST",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -72,4 +60,26 @@ const validateToken = async (token: string): Promise<Response> => {
   }
 };
 
-export { validateToken, generateToken, getUser };
+const createUser = async (username: string, email: string, password: string):Promise<Response> => {
+  try {
+    const result = await fetch(apiUrl + "/api/user", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        username,
+        email,
+        password,
+      }),
+    });
+
+    return result;
+  } catch (error: any) {
+    console.log(`Erro ao criar usuário: ${error.message}`);
+
+    throw Error(error.message);
+  }
+}
+
+export { validateToken, generateToken, getUser, createUser};

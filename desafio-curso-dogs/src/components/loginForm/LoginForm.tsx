@@ -33,11 +33,7 @@ const LoginForm = () => {
 
   return (
     <section className="animeLeft">
-      {/* <img
-        src={img}
-        alt="Um cachorro com uma touca amarela e uma blusinha cinza"
-      />
-      <div > */}
+
       <h1 className="title">Login</h1>
       <form className={styles.form} onSubmit={handleSubmit}>
         <Input label="Login" type="text" name="username" {...username} />
