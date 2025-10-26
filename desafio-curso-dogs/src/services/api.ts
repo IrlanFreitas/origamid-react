@@ -45,8 +45,10 @@ const getUser = async (token: string): Promise<Response> => {
 
 const validateToken = async (token: string): Promise<Response> => {
   try {
+    
+    // /api/user || "/jwt-auth/v1/token"
     const result = await fetch(apiUrl + "/api/user", {
-      method: "POST",
+      method: "GET",
       headers: {
         Authorization: `Bearer ${token}`,
       }
