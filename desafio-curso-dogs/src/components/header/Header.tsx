@@ -21,12 +21,12 @@ const Header = () => {
         </NavLink>
         {"   "}
         {data ? (
-          <div>
+          <>
             <NavLink to="/conta" className={styles.login}>
               {data?.nome}
             </NavLink>
-            <button onClick={() => userLogout()}>Sair</button>
-          </div>
+            {/* <button onClick={() => userLogout()}>Sair</button> */}
+          </>
         ) : (
           <NavLink to="/login" className={styles.login}>
             Login / Criar
