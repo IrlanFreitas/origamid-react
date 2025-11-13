@@ -1,6 +1,6 @@
 import type { Token } from "../types/Token";
 
- export const apiUrl = import.meta.env.VITE_API_URL;
+export const apiUrl = import.meta.env.VITE_API_URL;
 
 const generateToken = async (
   username: string,
@@ -45,13 +45,12 @@ const getUser = async (token: string): Promise<Response> => {
 
 const validateToken = async (token: string): Promise<Response> => {
   try {
-    
     // /api/user || "/jwt-auth/v1/token"
     const result = await fetch(apiUrl + "/api/user", {
       method: "GET",
       headers: {
         Authorization: `Bearer ${token}`,
-      }
+      },
     });
 
     return result;
@@ -62,7 +61,11 @@ const validateToken = async (token: string): Promise<Response> => {
   }
 };
 
-const createUser = async (username: string, email: string, password: string):Promise<Response> => {
+const createUser = async (
+  username: string,
+  email: string,
+  password: string
+): Promise<Response> => {
   try {
     const result = await fetch(apiUrl + "/api/user", {
       method: "POST",
@@ -82,6 +85,16 @@ const createUser = async (username: string, email: string, password: string):Pro
 
     throw Error(error.message);
   }
-}
+};
 
-export { validateToken, generateToken, getUser, createUser};
+const postPhoto = async (token: string, formData: FormData) => {
+  const result = await fetch(apiUrl + "/api/photo", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+    body: formData,
+  });
+};
+
+export { validateToken, generateToken, getUser, createUser };
