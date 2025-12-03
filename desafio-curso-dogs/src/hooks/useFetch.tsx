@@ -1,8 +1,7 @@
-import React, { useCallback, useState } from "react";
-import { apiUrl } from "../services/api";
+import { useCallback, useState } from "react";
 
 const useFetch = () => {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState<any>(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 

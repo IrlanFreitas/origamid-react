@@ -1,9 +1,11 @@
-import React from 'react'
+import FeedModal from "../feedModal/FeedModal"
+import FeedPhotos from "../feedPhotos/FeedPhotos"
 
 const Feed = () => {
   return (
     <div>
-      Feed
+      {/* <FeedModal /> */}
+      <FeedPhotos />
     </div>
   )
 }
