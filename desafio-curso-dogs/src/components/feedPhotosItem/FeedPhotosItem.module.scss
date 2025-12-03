@@ -1,4 +1,51 @@
+// Para que a segunda foto sempre ocupe um quadrado
+// inteiro do lado direito
+.photo:nth-child(2) {
+  grid-column: 2 / 4;
+  grid-row: span 2;
+}
+
+@media (max-width: 40rem) {
+  // Voltar ao normal em telas menores
+  .photo:nth-child(2) {
+    grid-column: initial;
+    grid-row: initial;
+  }
+}
 
 .photo {
-  margin-bottom: 10px;
+  display: grid;
+  border-radius: .2rem;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.photo img {
+  // Para que o img e o span ocupem o mesmo espaço no grid
+  grid-area: 1 / 1;
+}
+
+.views {
+  // Para que o img e o span ocupem o mesmo espaço no grid
+  grid-area:  1 / 1;
+  background: rgba(0, 0, 0, .3);
+  color: white;
+  font-size: 1rem;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+.photo:hover .views {
+  display: flex;
+}
+
+.views::before {
+  content: '' ;
+  width: 16px;
+  height: 16px;
+  background: url('../../assets/visualizacao.svg') center no-repeat;
+  display: inline-block;
+  margin-right: .25rem;
 }
