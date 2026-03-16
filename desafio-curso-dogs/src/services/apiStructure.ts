@@ -18,9 +18,19 @@ const PHOTOS_GET = (page: number, total: number, user: string) => {
     url: apiUrl + `/api/photo/?_page=${page}&_total=${total}&_user=${user}`,
     options: {
       method: "GET",
-      cache: 'no-store'
+      cache: "no-store",
     },
   };
 };
 
-export { PHOTO_POST, PHOTOS_GET};
+const PHOTO_GET = (id: number) => {
+  return {
+    url: apiUrl + `/api/photo/${id}`,
+    options: {
+      method: "GET",
+      cache: "no-store",
+    },
+  };
+};
+
+export { PHOTO_POST, PHOTOS_GET, PHOTO_GET};

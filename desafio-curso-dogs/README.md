@@ -16,5 +16,6 @@ Fazer uma lista de tarefas para incrementar o projeto:
 - Padrão de lint
 - Esteira de DevOps (CI/CD)
 - Storybook
+- MSW
 - Testes unitários e integração
 

@@ -6,7 +6,7 @@ import Error from "../error/Error";
 import Loading from "../loading/Loading";
 import styles from "./FeedPhotos.module.scss";
 
-const FeedPhotos = () => {
+const FeedPhotos = ({ setSelectedPhoto }: { setSelectedPhoto: any }) => {
   const { data, loading, error, request } = useFetch();
 
   useEffect(() => {
@@ -25,7 +25,11 @@ const FeedPhotos = () => {
     <>
       <ul className={`animeLeft ${styles.feed}`}>
         {data?.map((photo: any) => (
-          <FeedPhotosItem key={photo.id} photo={photo} />
+          <FeedPhotosItem
+            setSelectedPhoto={setSelectedPhoto}
+            key={photo.id}
+            photo={photo}
+          />
         ))}
       </ul>
     </>
