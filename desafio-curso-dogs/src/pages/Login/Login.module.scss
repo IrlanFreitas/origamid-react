@@ -2,7 +2,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
-  min-height: 110vh;
+  min-height: 95vh;
+  transition: all .3s;
 }
 
 .login::before {
@@ -22,7 +23,7 @@
   }
 
   .login::before {
-    display: none;
+    // display: none;
   }
 
   .forms {
