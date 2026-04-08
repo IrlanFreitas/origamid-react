@@ -21,8 +21,8 @@ const Feed = () => {
 
   return (
     <>
-      {selectedPhoto && <FeedModal photo={selectedPhoto} />}
       <FeedPhotos setSelectedPhoto={setSelectedPhoto} />
+      {selectedPhoto && <FeedModal photo={selectedPhoto} />}
     </>
   );
 };

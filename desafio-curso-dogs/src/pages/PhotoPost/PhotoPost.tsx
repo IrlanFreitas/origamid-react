@@ -72,7 +72,7 @@ const PhotoPost = () => {
             <div
               className={styles.preview}
               style={{ backgroundImage: `url(${img.preview})` }}
-            ></div>
+            />
           )}
         </div>
       </section>

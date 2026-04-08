@@ -13,9 +13,9 @@ const PHOTO_POST = (token: string, formData: FormData) => {
   };
 };
 
-const PHOTOS_GET = (page: number, total: number, user: string) => {
+const PHOTOS_GET = (page: number, total: number, user?: string) => {
   return {
-    url: apiUrl + `/api/photo/?_page=${page}&_total=${total}&_user=${user}`,
+    url: apiUrl + `/api/photo/?_page=${page}&_total=${total}${user !== undefined ? `&_user=${user}`: ''} `,
     options: {
       method: "GET",
       cache: "no-store",

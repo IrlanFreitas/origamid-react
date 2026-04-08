@@ -8,7 +8,7 @@ import type { UserContextType } from "../types/UserContext";
 export const UserContext = createContext<UserContextType | null>(null);
 
 export const UserStorage = ({ children }: { children: ReactNode }) => {
-  const [data, setData] = useState<User | null>();
+  const [data, setData] = useState<User | null>(null);
   const [login, setLogin] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string>();

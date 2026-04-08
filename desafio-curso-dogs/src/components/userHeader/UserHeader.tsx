@@ -23,7 +23,6 @@ const UserHeader = () => {
       case "/conta/postar":
         setTitle("Postagens");
         break;
-
       default:
         break;
     }

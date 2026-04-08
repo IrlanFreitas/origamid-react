@@ -21,7 +21,6 @@ const UserHeaderNav = () => {
     setMobileMenu(false)
   }, [pathname])
   
-
   return (
     <>
       {mobile && (
