@@ -1,12 +1,14 @@
-import type { PhotoComments as PhotoWithComments } from "../../types/PhotoComments";
-import styles from "./PhotoComments.module.scss";
+import React from "react";
+import type { Comment } from "../../types/Comment";
 
-const PhotoComments = ({ photoComments }: { photoComments: PhotoWithComments }) => {
-  return (
-    <div className={styles.card}>
-      <img src={photoComments?.photo.src} alt={photoComments?.photo.title} />
-    </div>
-  );
+const PhotoComments = ({
+  id,
+  comments,
+}: {
+  id: number;
+  comments: Comment[];
+}) => {
+  return <div></div>;
 };
 
 export default PhotoComments;

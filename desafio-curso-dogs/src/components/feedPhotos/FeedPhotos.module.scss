@@ -5,10 +5,8 @@
   margin-bottom: 1rem;
   justify-items: center;
   transition: 1s all;
-}
 
-@media (max-width: 40rem) {
-  .feed {
+  @media (max-width: 40rem) {
     grid-template-columns: repeat(2, 1fr);
   }
 }

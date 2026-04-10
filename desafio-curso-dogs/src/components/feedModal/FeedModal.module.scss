@@ -4,11 +4,16 @@
   top: 0;
   left: 0;
   z-index: 1000;
-  background: rgba(0, 0, 0, .5);
+  background: rgba(0, 0, 0, .7);
   width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 2rem 4rem 2rem 4rem;
+
+  @media (max-width: 40rem) {
+    
+  }
 }
 

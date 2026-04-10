@@ -5,9 +5,15 @@ import { PHOTO_GET } from "../../services/apiStructure";
 import type { Photo } from "../../types/Photo";
 import Error from "../error/Error";
 import Loading from "../loading/Loading";
-import PhotoComments from "../photoComments/PhotoComments";
+import PhotoContent from "../photoContent/PhotoContent";
 
-const FeedModal = ({ photo }: { photo: Photo }) => {
+const FeedModal = ({
+  photo,
+  closeModal,
+}: {
+  photo: Photo;
+  closeModal: any;
+}) => {
   const { data, error, loading, request } = useFetch();
 
   useEffect(() => {
@@ -19,11 +25,22 @@ const FeedModal = ({ photo }: { photo: Photo }) => {
     fetchPhotos();
   }, [request]);
 
+  const handleOutsideClick = (event: any) => {
+    event.preventDefault()
+    if(event.target === event.currentTarget) {
+      closeModal()
+    }
+  }
+
   return (
-    <div className={styles.modal}>
+    <div className={styles.modal} onClick={handleOutsideClick}>
       {error && <Error error={error} />}
       {loading && <Loading />}
-      {data && <PhotoComments photoComments={data} />}
+      {data && (
+        <>
+          <PhotoContent photoContent={data} closeModal={closeModal} />
+        </>
+      )}
     </div>
   );
 };
