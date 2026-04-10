@@ -7,7 +7,7 @@ export interface Comment {
   comment_author_IP: string;
   comment_date: Date;
   comment_date_gmt: Date;
-  comment_content: Date;
+  comment_content: string;
   comment_karma: string;
   comment_approved: string;
   comment_agent: string;

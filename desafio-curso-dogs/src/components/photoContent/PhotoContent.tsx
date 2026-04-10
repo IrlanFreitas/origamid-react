@@ -1,6 +1,5 @@
 import type { PhotoWithComments } from "../../types/PhotoWithComments";
 import styles from "./PhotoContent.module.scss";
-import FecharIcon from "../../assets/fechar.svg?react";
 import { Link } from "react-router-dom";
 import PhotoComments from "../photoComments/PhotoComments";
 
@@ -33,17 +32,11 @@ const PhotoContent = ({
           <li>{photoContent?.photo.idade} anos</li>
         </ul>
 
-        {/* <button
-          onClick={closeModal}
-          style={{ cursor: "pointer", border: "none" }}
-        >
-          <FecharIcon style={{ width: 40, height: 40 }} />
-        </button> */}
+        <PhotoComments
+          id={photoContent?.photo.id}
+          comments={photoContent.comments}
+        />
       </div>
-      <PhotoComments
-        id={photoContent?.photo.id}
-        comments={photoContent.comments}
-      />
     </div>
   );
 };
