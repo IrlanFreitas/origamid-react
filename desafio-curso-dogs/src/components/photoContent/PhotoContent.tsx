@@ -31,12 +31,11 @@ const PhotoContent = ({
           <li>{photoContent?.photo.peso} kg</li>
           <li>{photoContent?.photo.idade} anos</li>
         </ul>
-
-        <PhotoComments
-          id={photoContent?.photo.id}
-          comments={photoContent.comments}
-        />
       </div>
+      <PhotoComments
+        id={photoContent?.photo.id}
+        comments={photoContent.comments}
+      />
     </div>
   );
 };

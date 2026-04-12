@@ -12,20 +12,23 @@ const PhotoCommentsForm = ({
   id: any;
   setComments: any;
 }) => {
-  const [comment, setComment] = useState("");
+  const [comment, setComment] = useState<string>("");
 
   const { request, error } = useFetch();
 
   const handleSubmit = async (event: any) => {
     event.preventDefault();
 
-    console.log("click");
-    const { url, options } = COMMENT_POST(id, { comment });
-    console.log({ url, options });
-    const { response, json } = await request(url, options);
-    if (response?.ok) {
-      setComment('')
-      setComments((comments: any) => [...comments, json]);
+    if (comment !== null || comment !== "") {
+      console.log("click");
+      console.log(comment);
+      const { url, options } = COMMENT_POST(id, { comment });
+      console.log({ url, options });
+      const { response, json } = await request(url, options);
+      if (response?.ok) {
+        setComment("");
+        setComments((comments: any) => [...comments, json]);
+      }
     }
   };
 
@@ -33,6 +36,7 @@ const PhotoCommentsForm = ({
     <form
       className={styles.form}
       // onSubmit={handleSubmit}
+      // onChange={handleSubmit}
       onClick={handleSubmit}
     >
       <textarea
@@ -41,7 +45,9 @@ const PhotoCommentsForm = ({
         placeholder="Comente..."
         className={styles.textarea}
         value={comment}
-        onChange={({ target }) => setComment(target.value)}
+        onChange={({ target }) => {
+          if (target.value !== "") setComment(target.value);
+        }}
       />
       <button className={styles.button}>
         <Enviar />

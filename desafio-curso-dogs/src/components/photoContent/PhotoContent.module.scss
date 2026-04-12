@@ -1,8 +1,6 @@
 .photo {
-  width: 900px;
   background-color: white;
   height: 36rem;
-  display: flex;
   border-radius: 5px;
   margin: auto;
   display: grid;
@@ -21,9 +19,12 @@
   }
 }
 
-.imagem img {
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
+// .imagem img {
+//   border-top-left-radius: 5px;
+//   border-bottom-left-radius: 5px;
+//   grid-row: 1/4
+// }
+.imagem {
   grid-row: 1/4
 }
 
