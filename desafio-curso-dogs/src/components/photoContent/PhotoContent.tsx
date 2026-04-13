@@ -2,6 +2,9 @@ import type { PhotoWithComments } from "../../types/PhotoWithComments";
 import styles from "./PhotoContent.module.scss";
 import { Link } from "react-router-dom";
 import PhotoComments from "../photoComments/PhotoComments";
+import { UserContext } from "../../contexts/UserContext";
+import { useContext } from "react";
+import PhotoDelete from "../photoDelete/PhotoDelete";
 
 const PhotoContent = ({
   photoContent,
@@ -10,6 +13,8 @@ const PhotoContent = ({
   photoContent: PhotoWithComments;
   closeModal: any;
 }) => {
+  const user = useContext(UserContext);
+
   return (
     <div className={styles.photo}>
       <div className={styles.imagem}>
@@ -17,9 +22,14 @@ const PhotoContent = ({
       </div>
       <div className={styles.details}>
         <p className={styles.author}>
-          <Link to={`/perfil/${photoContent.photo.author}`}>
-            @{photoContent.photo.author}
-          </Link>
+          {user?.data && user?.data.username === photoContent.photo.author ? (
+            <PhotoDelete id={photoContent.photo.id} />
+          ) : (
+            <Link to={`/perfil/${photoContent.photo.author}`}>
+              @{photoContent.photo.author}
+            </Link>
+          )}
+
           <span className={styles.views}>{photoContent.photo.acessos}</span>
         </p>
         <h1 className="title">

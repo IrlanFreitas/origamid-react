@@ -49,4 +49,16 @@ const COMMENT_POST = (id: any, body: { comment: string }) => {
   };
 };
 
-export { PHOTO_POST, PHOTOS_GET, PHOTO_GET, COMMENT_POST };
+const PHOTO_DELETE = (id: any) => {
+  return {
+    url: apiUrl + `/api/photo/${id}`,
+    options: {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${window.localStorage.getItem('token')}`,
+      },
+    },
+  };
+};
+
+export { PHOTO_POST, PHOTOS_GET, PHOTO_GET, COMMENT_POST, PHOTO_DELETE };
