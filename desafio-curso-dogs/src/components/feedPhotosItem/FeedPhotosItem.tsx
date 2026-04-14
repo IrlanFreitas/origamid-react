@@ -1,4 +1,5 @@
 import type { Photo } from "../../types/Photo";
+import ImageWithSkeleton from "../imageWithSkeleton/ImageWithSkeleton";
 import styles from "./FeedPhotosItem.module.scss";
 
 const FeedPhotosItem = ({
@@ -15,12 +16,9 @@ const FeedPhotosItem = ({
 
   return (
     <li className={styles.photo} onClick={handleClick}>
-      <img src={photo?.src} alt={photo.title} />
+      {/* <img src={photo?.src} alt={photo.title} /> */}
+      <ImageWithSkeleton  src={photo?.src} alt={photo.title} />
       <span className={styles.views}>{photo?.acessos}</span>
-      {/* <p>{photo?.title}</p>
-      <p>{photo?.idade}</p>
-      <p>{photo?.peso}</p>
-      <p>{photo?.date}</p> */}
     </li>
   );
 };

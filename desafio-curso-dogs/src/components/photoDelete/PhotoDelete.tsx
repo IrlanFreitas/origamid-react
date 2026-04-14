@@ -1,9 +1,9 @@
-import React, { type MouseEvent, type MouseEventHandler } from "react";
+import { type MouseEvent } from "react";
 import styles from "./PhotoDelete.module.scss";
 import useFetch from "../../hooks/useFetch";
 import { PHOTO_DELETE } from "../../services/apiStructure";
 
-const PhotoDelete = ({ id }: { id: string }) => {
+const PhotoDelete = ({ id }: { id: number }) => {
   const { loading, request } = useFetch();
 
   const handleClick = async (event: MouseEvent<HTMLButtonElement>) => {

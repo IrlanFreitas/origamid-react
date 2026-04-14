@@ -5,6 +5,7 @@ import PhotoComments from "../photoComments/PhotoComments";
 import { UserContext } from "../../contexts/UserContext";
 import { useContext } from "react";
 import PhotoDelete from "../photoDelete/PhotoDelete";
+import ImageWithSkeleton from "../imageWithSkeleton/ImageWithSkeleton";
 
 const PhotoContent = ({
   photoContent,
@@ -18,6 +19,11 @@ const PhotoContent = ({
   return (
     <div className={styles.photo}>
       <div className={styles.imagem}>
+        <ImageWithSkeleton
+          alt={photoContent?.photo.title}
+          src={photoContent?.photo.src}
+          title={photoContent?.photo.title}
+        />
         <img src={photoContent?.photo.src} alt={photoContent?.photo.title} />
       </div>
       <div className={styles.details}>
