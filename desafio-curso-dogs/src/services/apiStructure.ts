@@ -25,7 +25,7 @@ const PHOTOS_GET = (page: number, total: number, user?: string) => {
   };
 };
 
-const PHOTO_GET = (id: number) => {
+const PHOTO_GET = (id: string) => {
   return {
     url: apiUrl + `/api/photo/${id}`,
     options: {

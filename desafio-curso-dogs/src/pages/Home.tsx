@@ -1,12 +1,15 @@
-
-import Feed from '../components/feed/Feed'
+import { useContext } from "react";
+import Feed from "../components/feed/Feed";
+import { UserContext } from "../contexts/UserContext";
 
 const Home = () => {
-  return (
-    <section className='container mainContainer'>
-      <Feed />
-    </section>
-  )
-}
+  const { user } = useContext(UserContext);
 
-export default Home
+  return (
+    <section className="container mainContainer">
+      <Feed user={user} />
+    </section>
+  );
+};
+
+export default Home;

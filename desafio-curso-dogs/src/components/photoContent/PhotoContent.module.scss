@@ -12,6 +12,11 @@
   animation: enter 0.3s forwards;
 }
 
+.single.photo {
+ grid-template-columns: 1fr;
+ height: auto;
+}
+
 @keyframes enter {
   to {
     opacity: 1;
@@ -19,13 +24,12 @@
   }
 }
 
-// .imagem img {
-//   border-top-left-radius: 5px;
-//   border-bottom-left-radius: 5px;
-//   grid-row: 1/4
-// }
 .imagem {
   grid-row: 1/4
+}
+.single.imagem {
+  grid-row: 1;
+  border-radius: .2rem;
 }
 
 .author {
@@ -39,9 +43,12 @@
   text-decoration: underline;
 }
 
-
 .details {
   padding: 2rem 2rem 0 2rem;
+}
+
+.single.details {
+  padding: 1rem 0px 0px 0px;
 }
 
 .comments {

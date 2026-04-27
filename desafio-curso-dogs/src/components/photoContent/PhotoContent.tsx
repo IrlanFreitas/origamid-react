@@ -9,22 +9,21 @@ import ImageWithSkeleton from "../imageWithSkeleton/ImageWithSkeleton";
 
 const PhotoContent = ({
   photoContent,
-  closeModal,
+  single,
 }: {
   photoContent: PhotoWithComments;
-  closeModal: any;
+  single?: boolean;
 }) => {
   const user = useContext(UserContext);
 
   return (
-    <div className={styles.photo}>
+    <div className={`${styles.photo}  ${single ? styles.single : ""}`}>
       <div className={styles.imagem}>
-        <ImageWithSkeleton
-          alt={photoContent?.photo.title}
-          src={photoContent?.photo.src}
-          title={photoContent?.photo.title}
-        />
-        <img src={photoContent?.photo.src} alt={photoContent?.photo.title} />
+      <ImageWithSkeleton
+        alt={photoContent?.photo.title}
+        src={photoContent?.photo.src}
+        title={photoContent?.photo.title}
+      />
       </div>
       <div className={styles.details}>
         <p className={styles.author}>
