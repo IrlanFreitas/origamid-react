@@ -35,12 +35,15 @@ const PHOTO_GET = (id: string) => {
   };
 };
 
-const PROFILE_GET = (id: string) => {
+const PASSWORD_POST = (body: object) => {
   return {
-    url: apiUrl + `/api/photo/${id}`,
+    url: apiUrl + "/api/password/lost",
     options: {
-      method: "GET",
-      cache: "no-store",
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
     },
   };
 };
@@ -52,7 +55,7 @@ const COMMENT_POST = (id: any, body: { comment: string }) => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${window.localStorage.getItem('token')}`,
+        Authorization: `Bearer ${window.localStorage.getItem("token")}`,
       },
       body: JSON.stringify(body),
     },
@@ -65,10 +68,17 @@ const PHOTO_DELETE = (id: any) => {
     options: {
       method: "DELETE",
       headers: {
-        Authorization: `Bearer ${window.localStorage.getItem('token')}`,
+        Authorization: `Bearer ${window.localStorage.getItem("token")}`,
       },
     },
   };
 };
 
-export { PHOTO_POST, PHOTOS_GET, PHOTO_GET, COMMENT_POST, PHOTO_DELETE };
+export {
+  PHOTO_POST,
+  PHOTOS_GET,
+  PHOTO_GET,
+  COMMENT_POST,
+  PHOTO_DELETE,
+  PASSWORD_POST,
+};

@@ -32,11 +32,9 @@ const Feed = ({ user }: { user: any }) => {
         // Tamanho da página
         const height = document.body.offsetHeight - window.innerHeight;
 
-        console.log(scroll);
-        console.log(height);
         // Quando scroll está perto do final da página
         if (scroll > height * 0.75 && !wait) {
-          console.log(true);
+          
           setPages((pages) => [...pages, pages.length + 1]);
           wait = true;
           // Aguardar um pouco antes de fazer outro fetch

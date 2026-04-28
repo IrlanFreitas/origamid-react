@@ -47,7 +47,6 @@ const LoginRegister = () => {
         await userLogin(username.value, password.value);
       } catch (error: any) {
         console.log(error);
-
         setErrorCriar(error.message);
       } finally {
         setLoadingCriar(false);

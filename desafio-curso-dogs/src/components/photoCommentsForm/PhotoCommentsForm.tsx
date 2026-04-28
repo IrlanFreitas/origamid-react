@@ -20,10 +20,9 @@ const PhotoCommentsForm = ({
     event.preventDefault();
 
     if (comment !== null || comment !== "") {
-      console.log("click");
-      console.log(comment);
+
       const { url, options } = COMMENT_POST(id, { comment });
-      console.log({ url, options });
+
       const { response, json } = await request(url, options);
       if (response?.ok) {
         setComment("");
