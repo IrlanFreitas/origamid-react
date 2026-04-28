@@ -35,6 +35,16 @@ const PHOTO_GET = (id: string) => {
   };
 };
 
+const PROFILE_GET = (id: string) => {
+  return {
+    url: apiUrl + `/api/photo/${id}`,
+    options: {
+      method: "GET",
+      cache: "no-store",
+    },
+  };
+};
+
 const COMMENT_POST = (id: any, body: { comment: string }) => {
   return {
     url: apiUrl + `/api/comment/${id}`,
