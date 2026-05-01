@@ -1,11 +1,13 @@
-import styles from './Footer.module.scss'
+import styles from "./Footer.module.scss";
+import Dogs from "../../assets/dogs-footer.svg?react";
 
 const Footer = () => {
   return (
-    <footer>
-      
+    <footer className={styles.footer}>
+      <Dogs />
+      <p>Dogs. Alguns direitos reservador</p>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

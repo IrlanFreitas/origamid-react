@@ -49,6 +49,17 @@ a {
   color: #333;
 }
 
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh + 10rem);
+}
+
+.AppBody {
+  /* Para que ele sempre se expanda */
+  flex: 1;
+}
+
 .container {
   /* Tamanho máximo que o site expande */
   max-width: 50rem;
