@@ -48,6 +48,19 @@ const PASSWORD_POST = (body: object) => {
   };
 };
 
+const PASSWORD_RESET = (body: object) => {
+  return {
+    url: apiUrl + "/api/password/reset",
+    options: {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+    },
+  };
+};
+
 const COMMENT_POST = (id: any, body: { comment: string }) => {
   return {
     url: apiUrl + `/api/comment/${id}`,
@@ -81,4 +94,5 @@ export {
   COMMENT_POST,
   PHOTO_DELETE,
   PASSWORD_POST,
+  PASSWORD_RESET,
 };
