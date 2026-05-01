@@ -5,6 +5,7 @@ import { PASSWORD_POST } from "../../services/apiStructure";
 import Button from "../button/Button";
 import Error from "../error/Error";
 import Input from "../input/Input";
+import Head from "../../helper/Head";
 
 const LoginPasswordLost = () => {
   const login = useForm();
@@ -24,6 +25,7 @@ const LoginPasswordLost = () => {
 
   return (
     <section>
+      <Head title="Procurando uma nova senha?" />
       <h1 className="title">Perdeu a senha</h1>
       {data ? (
         <>

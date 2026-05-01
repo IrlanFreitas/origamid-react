@@ -6,6 +6,7 @@ import Button from "../button/Button";
 import Input from "../input/Input";
 import Error from "../error/Error";
 import useFetch from "../../hooks/useFetch";
+import Head from "../../helper/Head";
 
 // TODO - Melhoria no fluxo de cadastro:
 // * [ ] Informação de criado com sucesso - Falta
@@ -56,6 +57,7 @@ const LoginRegister = () => {
 
   return (
     <section className="animeLeft">
+      <Head title="Crie sua conta" />
       <h1 className="title">Cadastre-se</h1>
       <form onSubmit={handleSubmit}>
         <Input label="Usuário" type="text" name="username" {...username} />

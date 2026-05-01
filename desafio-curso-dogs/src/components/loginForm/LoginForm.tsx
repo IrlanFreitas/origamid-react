@@ -9,6 +9,7 @@ import * as service from "../../services/api";
 import { UserContext } from "../../contexts/UserContext";
 import Error from "../error/Error";
 import stylesButton from "../button/Button.module.scss";
+import Head from "../../helper/Head";
 
 const LoginForm = () => {
   const { userLogin, error, loading } = useContext<any>(UserContext);
@@ -33,6 +34,7 @@ const LoginForm = () => {
 
   return (
     <section className="animeLeft">
+      <Head title="Login" />
       <h1 className="title">Login</h1>
       <form className={styles.form} onSubmit={handleSubmit}>
         <Input label="Login" type="text" name="username" {...username} />
