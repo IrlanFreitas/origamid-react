@@ -22,7 +22,7 @@ const UserGraphs = ({ data }: { data: Array<any> }) => {
   }, [data]);
 
   return (
-    <section className={`${styles.graph} animeLeft`}>
+    <div className={`${styles.graph} animeLeft`}>
       <div className={`${styles.total} ${styles.graphItem}`}>
         <p>Acessos: {total}</p>
       </div>
@@ -59,7 +59,7 @@ const UserGraphs = ({ data }: { data: Array<any> }) => {
           <VictoryBar alignment="start" data={graph}></VictoryBar>
         </VictoryChart>
       </div>
-    </section>
+    </div>
   );
 };
 
